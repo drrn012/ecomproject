@@ -1,8 +1,9 @@
 1. Project Initialization:
 I started by creating a Django project with the command:
 
-
+```bash
 django-admin startproject ecomproject
+```
 
 This set up the core structure of the project. In settings.py, I made sure the basic configurations were in place:
 
@@ -13,7 +14,9 @@ Static Files: I configured the paths to static files (like CSS and JavaScript) s
 2. App Creation:
 I created a new app called store to handle the core functionality of the e-commerce platform:
 
+```bash
 python manage.py startapp store
+```
 
 In the project's settings.py, I registered this new app in INSTALLED_APPS so Django could recognize it.
 
@@ -22,8 +25,10 @@ In models.py within the store app, I created three models: Product, Category, an
 
 After defining the models, I ran the following commands to apply these changes to the database:
 
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
 This created the necessary tables in the database.
 
@@ -43,7 +48,7 @@ I also configured my deployment files, including the wsgi.py and requirements.tx
 7. Request-Response Flow Diagram:
 To summarize how the system works, here’s a simplified flow of what happens when a client sends a request:
 
-
+```bash
 +--------+        +--------------------+        +--------------------+
 | Client | -----> |      urls.py        | -----> |      views.py       |
 +--------+        +--------------------+        +--------------------+
@@ -54,7 +59,8 @@ To summarize how the system works, here’s a simplified flow of what happens wh
   | HTTP GET/  | <-- models.py <-- HTML <--|   Database   |
   | HTTP POST  |                           +-------------+
   +------------+
-  
+
+```
 Here’s how it works:
 
 urls.py: Maps the URL path (like /products/) to the correct view function (like product_list).
@@ -68,10 +74,12 @@ Track all changes in the project, so I could always revert if something broke.
 Work on different features in separate branches and merge them when ready.
 Integrate with CI/CD pipelines to automatically deploy or test the code after each push to the repository.
 
+```bash
 git init
 git add .
 git commit -m "Initial commit"
 git push origin main
+```
 
 I also took advantage of the rebase setting, which helped keep my Git history clean when merging changes.
 
@@ -85,6 +93,8 @@ Community and security: There’s extensive documentation, and Django handles se
 10. Why Django’s Model is Called an ORM?
 Django’s model system is an Object-Relational Mapping (ORM) tool. This means I can work with the database using Python code instead of SQL. For example, instead of writing a SQL query to fetch all products, I can do this in Python:
 
+```bash
 products = Product.objects.all()
+```
 
 This abstracts away the complexity of writing raw SQL and makes database operations smoother and more intuitive.
