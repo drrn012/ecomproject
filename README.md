@@ -141,7 +141,7 @@ This abstracts away the complexity of writing raw SQL and makes database operati
 
 ## Deployment
 
-- [Link to PWS Application](your-pws-link-here)
+- [Link to PWS Application](http://derensh-pandian-ecomproject.pbp.cs.ui.ac.id)
 
 
 ## Proof
