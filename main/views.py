@@ -4,9 +4,9 @@ from django.core import serializers
 from .forms import ProductForm
 from .models import Product
 
-# Home page view
 def home(request):
-    return render(request, 'main.html')
+    products = Product.objects.all()  # Fetch all products from the database
+    return render(request, 'main.html', {'products': products})
 
 # View to handle adding a product via form submission
 def add_product(request):
@@ -14,7 +14,7 @@ def add_product(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('product-json')  # Redirect to a page to list all products (optional)
+            return redirect('home') 
     else:
         form = ProductForm()
     return render(request, 'add_product.html', {'form': form})
