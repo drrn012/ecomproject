@@ -147,4 +147,28 @@ copy this if it doesn't work:
 http://derensh-pandian-ecomproject.pbp.cs.ui.ac.id
 
 
-## Proof
+# Assignment 4
+
+
+### 1. What is the difference between HttpResponseRedirect() and redirect()?
+`HttpResponseRedirect()` is a Django class used to return a redirect response to a specified URL. It requires a full URL or a path. On the other hand, `redirect()` is a shortcut function that automatically resolves URLs using the URL dispatcher, making it easier to redirect to views by name or using a relative URL.
+
+### 2. Explain how the MoodEntry model is linked with User!
+The `MoodEntry` model is linked to the `User` model through a foreign key relationship. This means each instance of `MoodEntry` is associated with a specific user. In the model definition, this is typically done using a field like `user = models.ForeignKey(User, on_delete=models.CASCADE)` which establishes this connection, allowing retrieval of mood entries specific to each user.
+
+### 3. What is the difference between authentication and authorization, and what happens when a user logs in? Explain how Django implements these two concepts.
+Authentication is the process of verifying a user's identity, typically through a username and password. Authorization, on the other hand, determines what an authenticated user is allowed to do (permissions and access control). When a user logs in, Django checks their credentials against the database. If they are valid, Django creates a session for the user, marking them as authenticated. This is managed through Django’s built-in authentication system, which includes user models, authentication views, and middleware.
+
+### 4. How does Django remember logged-in users? Explain other uses of cookies and whether all cookies are safe to use.
+Django remembers logged-in users by creating a session for them, which is stored in a cookie on their browser. The cookie contains a session ID that corresponds to session data stored on the server. Other uses of cookies include storing user preferences, tracking user behavior, and managing shopping carts. However, not all cookies are safe; cookies can be vulnerable to attacks like Cross-Site Scripting (XSS) and Cross-Site Request Forgery (CSRF). It's important to set appropriate cookie attributes (e.g., `HttpOnly`, `Secure`, `SameSite`) to mitigate these risks.
+
+### 5. Explain how did you implement the checklist step-by-step (apart from following the tutorial).
+To implement the checklist, I followed these steps:
+1. **Identified Requirements**: Gathered the necessary features needed for the checklist functionality.
+2. **Created Models**: Defined the `Checklist` and related models in `models.py` to store tasks and their completion status.
+3. **Set Up Views**: Developed views to handle checklist creation, updates, and deletions.
+4. **Designed Templates**: Created HTML templates to render the checklist interface and display tasks dynamically.
+5. **Integrated User Authentication**: Ensured that only authenticated users could access and manage their checklists.
+6. **Tested Functionality**: Thoroughly tested the checklist features to ensure they worked as expected and fixed any bugs.
+
+

@@ -8,4 +8,7 @@ urlpatterns = [
     path('products/xml/', views.product_xml, name='product-xml'),
     path('products/json/<int:id>/', views.product_json_by_id, name='product-json-by-id'),
     path('products/xml/<int:id>/', views.product_xml_by_id, name='product-xml-by-id'),
+    path('register/', views.register, name='register'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
 ]
