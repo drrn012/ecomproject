@@ -149,26 +149,30 @@ http://derensh-pandian-ecomproject.pbp.cs.ui.ac.id
 
 # Assignment 4
 
+1. **What is the difference between HttpResponseRedirect() and redirect()?**
 
-### 1. What is the difference between HttpResponseRedirect() and redirect()?
-`HttpResponseRedirect()` is a Django class used to return a redirect response to a specified URL. It requires a full URL or a path. On the other hand, `redirect()` is a shortcut function that automatically resolves URLs using the URL dispatcher, making it easier to redirect to views by name or using a relative URL.
+   `HttpResponseRedirect()` is a Django class that returns an HTTP response with a 302 status code, which indicates a temporary redirect. It requires a specific URL as an argument. On the other hand, `redirect()` is a shortcut function that simplifies the process of returning a redirect response. It can accept a model object, a view name, or a URL, and it handles the URL resolution for you, making it more versatile and user-friendly.
 
-### 2. Explain how the MoodEntry model is linked with User!
-The `MoodEntry` model is linked to the `User` model through a foreign key relationship. This means each instance of `MoodEntry` is associated with a specific user. In the model definition, this is typically done using a field like `user = models.ForeignKey(User, on_delete=models.CASCADE)` which establishes this connection, allowing retrieval of mood entries specific to each user.
+2. **Explain how the MoodEntry model is linked with User!**
 
-### 3. What is the difference between authentication and authorization, and what happens when a user logs in? Explain how Django implements these two concepts.
-Authentication is the process of verifying a user's identity, typically through a username and password. Authorization, on the other hand, determines what an authenticated user is allowed to do (permissions and access control). When a user logs in, Django checks their credentials against the database. If they are valid, Django creates a session for the user, marking them as authenticated. This is managed through Django’s built-in authentication system, which includes user models, authentication views, and middleware.
+   The `MoodEntry` model is linked with the `User` model through a ForeignKey relationship. This means each `MoodEntry` record is associated with a specific user, allowing the application to keep track of which user created each mood entry. This relationship is typically defined in the model with a line like `user = models.ForeignKey(User, on_delete=models.CASCADE)`.
 
-### 4. How does Django remember logged-in users? Explain other uses of cookies and whether all cookies are safe to use.
-Django remembers logged-in users by creating a session for them, which is stored in a cookie on their browser. The cookie contains a session ID that corresponds to session data stored on the server. Other uses of cookies include storing user preferences, tracking user behavior, and managing shopping carts. However, not all cookies are safe; cookies can be vulnerable to attacks like Cross-Site Scripting (XSS) and Cross-Site Request Forgery (CSRF). It's important to set appropriate cookie attributes (e.g., `HttpOnly`, `Secure`, `SameSite`) to mitigate these risks.
+3. **What is the difference between authentication and authorization, and what happens when a user logs in? Explain how Django implements these two concepts.**
 
-### 5. Explain how did you implement the checklist step-by-step (apart from following the tutorial).
-To implement the checklist, I followed these steps:
-1. **Identified Requirements**: Gathered the necessary features needed for the checklist functionality.
-2. **Created Models**: Defined the `Checklist` and related models in `models.py` to store tasks and their completion status.
-3. **Set Up Views**: Developed views to handle checklist creation, updates, and deletions.
-4. **Designed Templates**: Created HTML templates to render the checklist interface and display tasks dynamically.
-5. **Integrated User Authentication**: Ensured that only authenticated users could access and manage their checklists.
-6. **Tested Functionality**: Thoroughly tested the checklist features to ensure they worked as expected and fixed any bugs.
+   Authentication is the process of verifying the identity of a user (e.g., confirming a username and password), while authorization determines what an authenticated user is allowed to do (e.g., accessing specific views or performing certain actions). When a user logs in, Django verifies their credentials and creates a session for them, storing their user ID in the session. Django uses middleware to manage authentication and authorization, ensuring that only authenticated users can access certain views.
+
+4. **How does Django remember logged-in users? Explain other uses of cookies and whether all cookies are safe to use.**
+
+   Django remembers logged-in users by creating a session for them, which is stored on the server and linked to a session ID saved in a cookie on the user's browser. This allows Django to identify the user on subsequent requests. Other uses of cookies include storing user preferences, tracking user behavior, and maintaining shopping cart data. Not all cookies are safe; for example, cookies storing sensitive information should be secured with flags like `HttpOnly` and `Secure` to prevent access by client-side scripts and ensure they're transmitted over secure connections.
+
+5. **Explain how I implemented the checklist step-by-step (apart from following the tutorial).**
+
+   - Implemented user registration by creating a registration form and a corresponding view to handle form submissions.
+   - Created login and logout functions to manage user sessions using Django's built-in authentication system.
+   - Populated the database with two user accounts and three dummy entries for each using Django's admin interface.
+   - Linked the `Product` model to the `User` model by adding a ForeignKey to the `Product` model.
+   - Modified the main page template to display the logged-in user's username and last login time using Django's session framework.
+   - Tested each function to ensure seamless user experience and functionality.
+
 
 
