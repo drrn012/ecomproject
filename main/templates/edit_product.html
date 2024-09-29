@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10 p-5 bg-white rounded shadow">
+        <h2 class="text-2xl font-bold mb-4">Edit Product</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Product Name</label>
+                <input type="text" name="name" id="name" value="{{ product.name }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200">
+            </div>
+            <div class="mb-4">
+                <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+                <input type="number" name="price" id="price" value="{{ product.price }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200">
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea name="description" id="description" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200">{{ product.description }}</textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update Product</button>
+        </form>
+        <a href="{% url 'home' %}" class="mt-4 inline-block text-blue-500">Back to Product List</a>
+    </div>
+</body>
+</html>
