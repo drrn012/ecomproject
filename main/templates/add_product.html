@@ -2,14 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <!-- Custom styles for the add product page -->
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Limit the width of the form container */
+            margin-left: auto; /* Center horizontally */
+            margin-right: auto; /* Center horizontally */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center; /* Center the header */
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Space between form groups */
+        }
+
+        .form-label {
+            font-weight: bold;
+            display: block; /* Make the label a block element */
+            margin-bottom: 5px; /* Space between label and input */
+        }
+
+        .form-control {
+            width: 100%; /* Make inputs full width */
+            padding: 10px; /* Add padding for better appearance */
+            border-radius: 10px; /* Rounded corners */
+            border: 1px solid #ccc; /* Light border */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+            transition: border 0.3s; /* Smooth border change */
+        }
+
+        .form-control:focus {
+            border: 1px solid #333; /* Darker border on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        .btn-update {
+            width: 100%; /* Full width for button */
+            height: 50px; /* Fixed height */
+            background-color: #333;
+            color: white;
+            border: none; /* Remove default border */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth background change */
+        }
+
+        .btn-update:hover {
+            background-color: #555; /* Darker button on hover */
+        }
+    </style>
 </head>
 <body>
-    <h2>Add a New Product</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add Product</button>
-    </form>
+    <div class="container">
+        <h2>Add a New Product</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="price" class="form-label">Price:</label>
+                <input type="number" id="price" name="price" class="form-control" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="description" class="form-label">Description:</label>
+                <textarea id="description" name="description" class="form-control" rows="5" required></textarea>
+            </div>
+            <div class="input-submit">
+                <button type="submit" class="btn-update">Add Product</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
