@@ -196,6 +196,7 @@ p {
 #myParagraph {
   color: red;
 }
+```
 
 ## 2. Importance of Responsive Design
 
@@ -223,6 +224,7 @@ These three properties control the layout and spacing around and inside HTML ele
   border: 2px solid black;      /* The element's border */
   padding: 15px;               /* Space between the content and the border */
 }
+```
 
 ## 4. Flexbox and Grid Layout Concepts
 
@@ -236,6 +238,7 @@ Flexbox is a one-dimensional layout model used to create flexible and responsive
   justify-content: space-around;  /* Distributes space between items */
   align-items: center;            /* Aligns items vertically */
 }
+```
 
 ## Grid Layout
 
@@ -248,6 +251,7 @@ Grid Layout is a two-dimensional system used to design web pages by defining bot
   grid-template-columns: repeat(3, 1fr);  /* Creates 3 equal columns */
   grid-gap: 10px;                         /* Adds spacing between the grid items */
 }
+```
 
 ## 5. Implementation of Checklist
 
