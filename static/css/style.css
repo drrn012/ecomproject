@@ -1,3 +1,8 @@
+/* 
+inspired by https://www.ludiflex.com/modern-login-form-made-with-html-and-css/
+*/
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 * {
@@ -21,9 +26,9 @@ body {
     flex-direction: column;
     width: 440px;
     padding: 30px;
-    background: #c9c9c9; /* Add background color to the box */
-    border-radius: 15px; /* Optional: round the corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    background: #c9c9c9; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .login-header {
@@ -38,7 +43,7 @@ body {
 }
 
 .input-box {
-    margin-bottom: 15px; /* Ensure consistent spacing for all input boxes */
+    margin-bottom: 15px; 
 }
 
 .input-field {
@@ -53,22 +58,22 @@ body {
     transition: 0.3s;
 }
 
-/* Placeholder styles */
+
 ::placeholder {
     font-weight: 500;
     color: #222;
 }
 
-/* Hover effect */
+
 .input-field:hover {
-    border: 1px solid #333; /* Add a border on hover */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+    border: 1px solid #333; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
 }
 
 /* Focus effect */
 .input-field:focus {
-    border: 1px solid #222; /* Change border color on focus */
-    width: 105%; /* Slightly enlarge on focus */
+    border: 1px solid #222; 
+    width: 105%; 
 }
 
 .input-submit {
@@ -86,7 +91,7 @@ body {
 }
 
 .submit-btn:hover {
-    background: #a5a5a5; /* Change hover color for button */
+    background: #a5a5a5; 
     transform: scale(1.05, 1);
 }
 
