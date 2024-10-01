@@ -6,8 +6,6 @@
     <title>Add Product</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
-    <!-- Custom styles for the add product page -->
     <style>
         body {
             background-color: #f4f4f4;
@@ -19,53 +17,53 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 500px; /* Limit the width of the form container */
-            margin-left: auto; /* Center horizontally */
-            margin-right: auto; /* Center horizontally */
+            max-width: 500px; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
 
         h2 {
             margin-bottom: 20px;
-            text-align: center; /* Center the header */
+            text-align: center; 
         }
 
         .form-group {
-            margin-bottom: 20px; /* Space between form groups */
+            margin-bottom: 20px; 
         }
 
         .form-label {
             font-weight: bold;
-            display: block; /* Make the label a block element */
-            margin-bottom: 5px; /* Space between label and input */
+            display: block; 
+            margin-bottom: 5px; 
         }
 
         .form-control {
-            width: 100%; /* Make inputs full width */
-            padding: 10px; /* Add padding for better appearance */
-            border-radius: 10px; /* Rounded corners */
-            border: 1px solid #ccc; /* Light border */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
-            transition: border 0.3s; /* Smooth border change */
+            width: 100%; 
+            padding: 10px; 
+            border-radius: 10px; 
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            transition: border 0.3s; 
         }
 
         .form-control:focus {
-            border: 1px solid #333; /* Darker border on focus */
-            outline: none; /* Remove default outline */
+            border: 1px solid #333; 
+            outline: none; 
         }
 
         .btn-update {
-            width: 100%; /* Full width for button */
-            height: 50px; /* Fixed height */
+            width: 100%; 
+            height: 50px; 
             background-color: #333;
             color: white;
-            border: none; /* Remove default border */
-            border-radius: 10px; /* Rounded corners */
+            border: none; 
+            border-radius: 10px; 
             cursor: pointer;
-            transition: background-color 0.3s; /* Smooth background change */
+            transition: background-color 0.3s; 
         }
 
         .btn-update:hover {
-            background-color: #555; /* Darker button on hover */
+            background-color: #555; 
         }
     </style>
 </head>
