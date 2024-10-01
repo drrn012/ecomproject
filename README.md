@@ -175,4 +175,86 @@ http://derensh-pandian-ecomproject.pbp.cs.ui.ac.id
    - Tested each function to ensure seamless user experience and functionality.
 
 
+# Assignment 5
 
+## 1. CSS Selectors Priority
+
+When multiple CSS selectors target the same HTML element, the **priority order** is determined by specificity. CSS selectors are prioritized in the following order:
+
+1. **Inline CSS**: Styles applied directly to an element using the `style` attribute have the highest specificity.
+2. **ID Selectors**: Selectors targeting an element by its `id` (e.g., `#header`) take priority over class and element selectors.
+3. **Class, Attribute, and Pseudo-class Selectors**: These selectors (e.g., `.class`, `[type="text"]`, or `:hover`) have lower priority than ID selectors but higher than element selectors.
+4. **Element Selectors**: Targeting an element by its type (e.g., `p`, `h1`) has the lowest priority.
+
+If two rules have the same specificity, the last one defined in the CSS will take precedence.
+
+### Example:
+```css
+p {
+  color: blue;
+}
+#myParagraph {
+  color: red;
+}
+
+## 2. Importance of Responsive Design
+
+Responsive design is a crucial concept in web development because it ensures that a website or application functions and appears optimally across different devices and screen sizes, from desktop monitors to mobile phones. With the rise of mobile browsing, having a responsive design improves accessibility and user experience.
+
+### Example of Applications with Responsive Design:
+- **Twitter**: Adjusts layout and interface seamlessly for desktops, tablets, and mobile devices.
+- **Bootstrap Websites**: Responsive grid system adjusts the layout depending on the screen size.
+
+### Example of Applications without Responsive Design:
+- **Old Static Websites**: Many older websites designed for desktop use do not scale or adjust when viewed on smaller devices, leading to poor usability.
+
+## 3. Margin, Border, and Padding
+
+These three properties control the layout and spacing around and inside HTML elements in CSS:
+
+- **Margin**: The space outside the element’s border, creating space between the element and other elements.
+- **Border**: A line that surrounds the content and padding of an element. The border can be customized with thickness, color, and style.
+- **Padding**: The space inside the element’s border, between the content and the border, pushing the content away from the edge.
+
+### Example of Implementation:
+```css
+.box {
+  margin: 20px;                /* Space around the element */
+  border: 2px solid black;      /* The element's border */
+  padding: 15px;               /* Space between the content and the border */
+}
+
+## 4. Flexbox and Grid Layout Concepts
+
+### Flexbox:
+Flexbox is a one-dimensional layout model used to create flexible and responsive layouts, aligning and distributing space among elements in a container. Flexbox is particularly useful for creating fluid, responsive layouts such as horizontal navigation bars or aligning elements that need to be organized in a single direction (either row or column).
+
+#### Example of Flexbox:
+```css
+.container {
+  display: flex;
+  justify-content: space-around;  /* Distributes space between items */
+  align-items: center;            /* Aligns items vertically */
+}
+
+## Grid Layout
+
+Grid Layout is a two-dimensional system used to design web pages by defining both rows and columns. This system offers greater control over complex layouts where both vertical and horizontal placement matters.
+
+### Example of Grid Layout:
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Creates 3 equal columns */
+  grid-gap: 10px;                         /* Adds spacing between the grid items */
+}
+
+## 5. Implementation of Checklist
+
+I started by implementing the functions in `views.py` to handle adding, editing, and deleting features for my Django project. After that, I searched for templates that I could use to edit all the features of my website effectively. 
+
+Next, I added the necessary URLs into `urls.py` to ensure that all the functionalities worked correctly, including static file handling. Once everything was set up, I tested the features to work out any kinks that arose during implementation.
+
+For the navigation bar, I drew inspiration from the tutorial as well as other sites. I aimed to implement a side sliding bar feature using CSS to enhance user experience. After getting that in place, I focused on modifying the overall appearance of the website to make it look nicer and more polished.
+
+In this assignment, I also incorporated Bootstrap to help me implement the CSS styles I desired, which significantly improved the design and responsiveness of my project.
