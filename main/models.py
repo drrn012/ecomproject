@@ -9,3 +9,22 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+'''
+import uuid
+class Project(models.Model):
+    id = models.UUIDField(primary_key=true,default=uuid. uuid4)
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+class Employee(models.Model):
+    department = models.CharField(max_length=100)
+    projects = models.ManyToManyField(Project, related_name='employees')
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+'''
