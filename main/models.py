@@ -5,6 +5,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     description = models.TextField()
+    mood = models.CharField(max_length=255, blank=True, null=True)  # Mood field added
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  # Change 1 to the actual User ID
 
     def __str__(self):
