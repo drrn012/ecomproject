@@ -175,8 +175,7 @@
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
         <a href="/">Home</a>
-        <a href="{% url 'add-product' %}">Add Product</a>
-        <a href="javascript:void(0)" onclick="openAddProductModal()">Add Product with AJAX</a>
+        <a href="javascript:void(0)" onclick="openAddProductModal()">Add Product</a>
         <a href="https://github.com/drrn012/ecomproject">Contact</a>
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
