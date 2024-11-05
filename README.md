@@ -305,3 +305,37 @@ User input sanitization is essential on both the front-end and back-end for seve
 5. **User Experience Enhancements**: After successfully adding a product, I ensured that the input fields in the modal are cleared for the next entry, and I provided visual feedback to the user regarding the success or failure of their submission.
 
 This implementation allows for a smooth and interactive experience when adding products to the application, leveraging the power of AJAX and JavaScript.
+
+# Assignment 7
+# E-Commerce App
+
+## Description
+This application is designed as part of the Basic Elements of Flutter assignment. It features three buttons for viewing products, adding products, and logging out, complete with Snackbar notifications.
+
+## Explanation of Widgets
+- **Stateless Widgets**: Widgets that do not maintain any state. They are immutable, meaning their properties cannot change after they are built. Example: `Icon`, `Text`, `ElevatedButton`.
+- **Stateful Widgets**: Widgets that can change their state during their lifecycle. They are mutable and can be redrawn based on state changes. Example: `Form`, `TextField`, and custom widgets that manage their own state.
+
+### Widgets Used
+- `MaterialApp`: Sets up the application.
+- `Scaffold`: Provides a structure for the app with an AppBar and body.
+- `ElevatedButton`: Represents a button that can be pressed.
+- `SnackBar`: Displays messages at the bottom of the screen.
+- `Column`: Arranges widgets vertically.
+
+## Use-case for `setState()`
+The `setState()` method is used in stateful widgets to notify Flutter that the state has changed and that the widget needs to be rebuilt. It affects any variables that are part of the widget's state. For example, if you had a counter, calling `setState()` would update the UI to reflect the new value of the counter.
+
+## Difference between `const` and `final`
+- **const**: Used to declare compile-time constants. The value must be known at compile time and cannot change.
+- **final**: Used to declare a variable that can only be set once. The value can be set at runtime but cannot be reassigned after that.
+
+## Implementation Steps
+1. Created a new Flutter application.
+2. Designed a home screen with an AppBar and centered buttons.
+3. Implemented three buttons with icons and Snackbar messages.
+4. Customized the button colors for better user experience.
+5. Tested the application to ensure buttons display correct messages.
+
+## GitHub Repository
+Ensure you add your repository link here after pushing your code.
