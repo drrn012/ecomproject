@@ -336,6 +336,3 @@ The `setState()` method is used in stateful widgets to notify Flutter that the s
 3. Implemented three buttons with icons and Snackbar messages.
 4. Customized the button colors for better user experience.
 5. Tested the application to ensure buttons display correct messages.
-
-## GitHub Repository
-Ensure you add your repository link here after pushing your code.
